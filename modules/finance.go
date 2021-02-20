@@ -35,11 +35,12 @@ func CurrencyStats(){
 	if err != nil{
 		log.Fatal("error while unmarshalling json", err)
 	}
-	printer(c)
+	currencyPrinter(c)
 }
-func printer(c curRes){
-	fmt.Println("Date: ", c.Date)
-	fmt.Println(c.Valute.EUR.Name,":", c.Valute.EUR.Value, ". Previous:", c.Valute.EUR.Previous)
-	fmt.Println(c.Valute.USD.Name,":", c.Valute.USD.Value, ". Previous:", c.Valute.USD.Previous)
-	fmt.Println(c.Valute.NOK.Name,":", c.Valute.NOK.Value, ". Previous:", c.Valute.NOK.Previous)
+func currencyPrinter(c curRes){
+	fmt.Println("=== Курс валюты===")
+	fmt.Println("Дата и время: ", c.Date)
+	fmt.Println(c.Valute.EUR.Name,":", c.Valute.EUR.Value, ". Предыдущее:", c.Valute.EUR.Previous)
+	fmt.Println(c.Valute.USD.Name,":", c.Valute.USD.Value, ". Предыдущее:", c.Valute.USD.Previous)
+	fmt.Println(c.Valute.NOK.Name,":", c.Valute.NOK.Value, ". Предыдущее:", c.Valute.NOK.Previous)
 }

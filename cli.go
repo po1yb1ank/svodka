@@ -9,10 +9,11 @@ import (
 
 func main() {
 	app := &cli.App{
-		Name: "currency",
+		Name:  "currency",
 		Usage: "prints today's currency",
 		Action: func(c *cli.Context) error {
 			modules.CurrencyStats()
+			modules.WeatherStats()
 			return nil
 		},
 	}
